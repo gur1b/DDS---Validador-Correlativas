@@ -3,20 +3,22 @@ package domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Alumno {
     private String nombre;
-    private List<Materia> aprobadas;
+    private String legajo;
+    public List<Materia> materiasAprobadas;
 
-    public Alumno(String nombre) {
+    public Alumno(String nombre, String legajo) {
         this.nombre = nombre;
-        this.aprobadas = new ArrayList<>();
+        this.legajo = legajo;
+        this.materiasAprobadas = new ArrayList<>();
     }
+
     public void agregarMaterias(Materia ... materias) {
-        Collections.addAll(this.aprobadas, materias);}
+        Collections.addAll(this.materiasAprobadas, materias);}
 
     public List<Materia> getAprobadas() {
-        return aprobadas;
+        return materiasAprobadas;
     }
 }

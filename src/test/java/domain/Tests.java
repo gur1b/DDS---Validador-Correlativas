@@ -3,9 +3,6 @@ package domain;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Tests {
 
     @Test
@@ -26,7 +23,7 @@ public class Tests {
         Materia am2 = new Materia("AM2");
         dds.agregarMaterias(am1, aga);
 
-        Alumno alumno = new Alumno("Nachin");
+        Alumno alumno = new Alumno("Ignacio Millan", "209.023-9");
         alumno.agregarMaterias(ayed, am1, aga);
 
         Inscripcion inscripcion = new Inscripcion(alumno);
@@ -46,11 +43,11 @@ public class Tests {
         Materia dds = new Materia("DdS");
         dds.agregarMaterias(ayed, pdp);
 
-        Alumno alumno = new Alumno("Nachin");
-        alumno.agregarMaterias();
+        Alumno alumno = new Alumno("Ignacio Millan", "209.023-9");
+        alumno.agregarMaterias(ayed);
 
         Inscripcion inscripcion = new Inscripcion(alumno);
-        inscripcion.agregarMaterias(pdp);
+        inscripcion.agregarMaterias(dds);
 
         Assert.assertFalse(inscripcion.aprobada());
     }

@@ -13,17 +13,16 @@ public class Inscripcion {
         this.alumno = alumno;
         this.materiasInscribir = new ArrayList<>();}
 
-    public void agregarMaterias(Materia ... materias) {
-        Collections.addAll(this.materiasInscribir, materias);
+    public void agregarMaterias(Materia ... materiasAInscribir) {
+        Collections.addAll(this.materiasInscribir, materiasAInscribir);
     }
-    public boolean aprobada()
-    {  List<Materia> materiasAprobadasAlumno = alumno.getAprobadas();
-        List<Materia> correlativas = this.correlativasNecesarias();
-        return materiasAprobadasAlumno.containsAll(correlativas);}
-
     public List<Materia> correlativasNecesarias()
     {return materiasInscribir.stream()
             .flatMap(materia -> materia.getCorrelativas().stream())
             .collect(Collectors.toList());}
 
+    public boolean aprobada()
+    {  List<Materia> materiasAprobadasAlumno = alumno.getAprobadas();
+        List<Materia> correlativas = this.correlativasNecesarias();
+        return materiasAprobadasAlumno.containsAll(correlativas);}
 }
