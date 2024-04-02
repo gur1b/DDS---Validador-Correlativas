@@ -1,2 +1,2 @@
-Practica Entregable
-Aluma: Guadalupe Hryb
+Practica Entregable de Guadalupe Hryb :)
+
